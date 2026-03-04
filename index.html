@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audience Reach Visualizer | Seele AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="icon">⭕</span>
+                <h1>Audience<span>Insight</span></h1>
+            </div>
+            <p class="subtitle">Visualizing campaign overlaps and search themes</p>
+        </header>
+
+        <main>
+            <section id="viz-container">
+                <div class="glass-panel" id="canvas-wrapper">
+                    <div id="venn-diagram">
+                        <!-- Visualization will be rendered here -->
+                        <div class="placeholder">
+                            <div class="loader"></div>
+                            <p>Waiting for campaign data...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="controls-container">
+                <div class="glass-panel campaign-list">
+                    <h3>Active Campaigns</h3>
+                    <ul id="campaign-items">
+                        <!-- Campaign items will appear here -->
+                    </ul>
+                </div>
+
+                <div class="glass-panel stats-panel">
+                    <h3>Overlap Analytics</h3>
+                    <div id="overlap-stats">
+                        <p class="empty-msg">Add campaign data to see insights.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section id="intelligence-section">
+            <div class="glass-panel">
+                <h3>👥 Segmentation Intelligence Briefing</h3>
+                <div id="segment-grid" class="segment-breakdown">
+                    <!-- Segment personas will appear here -->
+                    <p class="empty-msg">Adding campaign data will generate persona segments...</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Seele AI Advertising Strategy</p>
+        </footer>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/venn.js@0.2.14/venn.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
