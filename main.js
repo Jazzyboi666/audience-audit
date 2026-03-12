@@ -92,6 +92,13 @@ const campaigns = {
         interests: ['Arts & Design Education', 'Design Software', 'Web Design & Development', 'Technology Industry', 'Artificial Intelligence in Banking', 'Game Development Platforms', 'Video Game Development Resources', 'Deep Learning', 'Machine Learning', 'AI Chatbot', 'Game Design Software and Information', 'Video Games'],
         themes: [],
         persona: 'General AI & design fans.'
+    },
+    'Save_Time_Dev': {
+        fullName: 'Creator_GG_SaveTimeonDev_YS_20260305',
+        color: '#fbbf24',
+        interests: ['Game Development Platforms', 'Video Game Development Resources', 'Indie Games', 'Game Design Software and Information'],
+        themes: [],
+        persona: 'Efficiency-driven indie devs.'
     }
 };
 
