@@ -120,23 +120,24 @@ header {
     border-right: 1px solid var(--glass-border);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1.5rem;
     background: rgba(255,255,255,0.01);
 }
 
 .card-sidebar h4 {
-    font-size: 1rem;
-    line-height: 1.4;
-    word-break: break-all;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    font-weight: 700;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .interest-column {
     padding: 1.5rem;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    scrollbar-width: none;
 }
 
 .interest-column::-webkit-scrollbar {

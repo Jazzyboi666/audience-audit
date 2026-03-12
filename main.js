@@ -74,14 +74,14 @@ const campaigns = {
     },
     'Pro_Enterprise_Pipeline': {
         fullName: '0224-creator-T1-MAX44-YL',
-        color: '#475569',
+        color: '#f43f5e',
         interests: ['Design Software (In-market)', 'Drawing & Animation Software (In-market)', 'Game Development Platforms', 'Instructions for Making a Game'],
         themes: ['volumetric 3d generation ai', 'unity pro 3d assets ai', 'unreal engine 5 ai pipeline', 'godot engine source to 3d', 'text to fbx pro generator', 'obj export ai 3d models', 'pbr material generator for games', '4k texture generation ai', 'high quality mesh generator ai'],
         persona: 'Pro studio leads and enterprise developers building high-fidelity 4K and volumetric 3D assets.'
     },
     'Competitive_Siege_V1': {
         fullName: '1223-sale-GGAD_T1-2_LY',
-        color: '#064e3b',
+        color: '#f87171',
         interests: ['Unreal Game Engine', 'Unity Development Platform', 'Blender', 'Game Development Platforms', 'Design Software'],
         themes: ['Create 3D games for beginners', 'AI-powered game creation tool', 'Create 3D platformer using text', 'Neural game engine', 'educational game maker ai', 'Rosebud AI alternative', 'Better than Ludo.ai', 'Zero code game development', 'Apps like Hiber3D'],
         persona: 'Beginners and early-stage indie devs comparing AI-powered platforms for direct 3D platformer creation.'
