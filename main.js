@@ -83,111 +83,44 @@ const campaigns = {
     }
 };
 
-/**
- * CORE DATA DETECTOR: Automatically calculate overlaps based on array intersections
- */
-function calculateOverlaps() {
-    const sets = [];
-    const keys = Object.keys(campaigns);
-
-    // 1. Base sets (circles)
-    keys.forEach(id => {
-        const totalTags = campaigns[id].interests.length + campaigns[id].themes.length;
-        sets.push({ sets: [id], size: totalTags * 10 }); // Scaled for visibility
-    });
-
-    // 2. 2-way intersections
-    for (let i = 0; i < keys.length; i++) {
-        for (let j = i + 1; j < keys.length; j++) {
-            const id1 = keys[i];
-            const id2 = keys[j];
-
-            // Search Theme intersection
-            const sharedThemes = campaigns[id1].themes.filter(t =>
-                campaigns[id2].themes.includes(t)
-            ).length;
-
-            // Interest intersection
-            const sharedInterests = campaigns[id1].interests.filter(inter =>
-                campaigns[id2].interests.includes(inter)
-            ).length;
-
-            const totalShared = sharedThemes + sharedInterests;
-
-            if (totalShared > 0) {
-                sets.push({ sets: [id1, id2], size: totalShared * 8 });
-            }
-        }
-    }
-
-    // 3. Significant 3-way overlaps (Manual sanity check for core nucleus)
-    const nucleus = ['Technical_Assets', 'Pro_Enterprise_Pipeline', 'Automation_Layer'];
-    sets.push({ sets: nucleus, size: 25 });
-
-    return sets;
-}
-
 function init() {
-    const dynamicSets = calculateOverlaps();
-    renderGlobalDiagram(dynamicSets);
+    renderScroller();
     updateSidebar();
     renderRevenueLeaderboard();
     renderThemesUnderneath();
     renderTopCollisionRanking();
 }
 
-function renderGlobalDiagram(sets) {
-    document.getElementById('canvas-wrapper').classList.add('has-data');
-    const container = document.getElementById('venn-diagram');
+function renderScroller() {
+    const container = document.getElementById('campaign-scroller');
+    if (!container) return;
+    
     container.innerHTML = '';
-    const chart = venn.VennDiagram().width(850).height(450);
-    const div = d3.select("#venn-diagram");
-    div.datum(sets).call(chart);
-
-    div.selectAll(".venn-circle path")
-        .style("fill-opacity", d => {
-            const id = d.sets[0];
-            return campaigns[id] && campaigns[id].isTopPerformer ? 0.6 : 0.2;
-        })
-        .style("stroke-width", d => {
-            const id = d.sets[0];
-            return campaigns[id] && campaigns[id].isTopPerformer ? 6 : 2;
-        })
-        .style("stroke-opacity", 1)
-        .style("stroke", d => {
-            const id = d.sets[0];
-            return d.sets.length === 1 ? (campaigns[id] ? campaigns[id].color : "#ffffff") : "#ffffff";
-        })
-        .style("fill", d => {
-            const id = d.sets[0];
-            return d.sets.length === 1 ? (campaigns[id] ? campaigns[id].color : "#ffffff") : "#ffffff";
-        });
-
-    div.selectAll(".venn-circle text").remove();
-
-    const tooltip = d3.select("body").selectAll(".venntooltip").data([null]).join("div").attr("class", "venntooltip").style("opacity", 0);
-
-    div.selectAll("g")
-        .on("mouseover", function (event, d) {
-            venn.sortAreas(div, d);
-            tooltip.transition().duration(200).style("opacity", .9);
-            let content = "";
-            if (d.sets.length === 1) {
-                const camp = campaigns[d.sets[0]];
-                content = `
-                    <div style="font-weight: 800; color: ${camp.color}; margin-bottom: 8px">${camp.fullName}</div>
-                    ${camp.revenue ? `<div style="color: #4ade80; font-weight: 900; font-size: 1.1rem; margin-bottom: 8px">💰 Revenue: $${camp.revenue}</div>` : ''}
-                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #94a3b8">Targeted Interests:</div>
-                    <div style="margin-top: 5px">${camp.interests.map(i => `<div style="font-size: 0.75rem; margin-bottom: 2px">• ${i}</div>`).join('')}</div>
-                `;
-            } else {
-                content = `<div style="font-weight: 800">Dynamic Collision</div><div style="font-size: 0.75rem; opacity: 0.8">These campaigns share specific interests or themes.</div>`;
-            }
-            tooltip.html(content).style("left", (event.pageX + 15) + "px").style("top", (event.pageY - 28) + "px");
-        })
-        .on("mousemove", (event) => tooltip.style("left", (event.pageX + 15) + "px").style("top", (event.pageY - 28) + "px"))
-        .on("mouseout", () => tooltip.transition().duration(500).style("opacity", 0));
+    
+    Object.keys(campaigns).forEach(id => {
+        const camp = campaigns[id];
+        const card = document.createElement('div');
+        card.className = 'scroller-card';
+        card.innerHTML = `
+            <div class="card-sidebar">
+                <div style="font-size: 0.65rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 0.5rem">Campaign</div>
+                <h4 style="color: ${camp.color}">${camp.fullName}</h4>
+                <div style="margin-top: auto">
+                    ${camp.revenue ? `<div style="font-size: 0.7rem; color: #4ade80; font-weight: 800">💰 $${camp.revenue}</div>` : ''}
+                </div>
+            </div>
+            <div class="interest-column">
+                <div style="font-size: 0.65rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 0.5rem">Interests Used</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem">
+                    ${camp.interests.map(i => `<div class="interest-tag">${i}</div>`).join('')}
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
 }
+
+
 
 function updateSidebar() {
     const list = document.getElementById('campaign-items');
