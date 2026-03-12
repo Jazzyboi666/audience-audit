@@ -89,15 +89,6 @@ function init() {
     renderRevenueLeaderboard();
     renderThemesUnderneath();
     renderTopCollisionRanking();
-    
-    // Add scroll controls
-    document.getElementById('scroll-prev').addEventListener('click', () => {
-        document.getElementById('campaign-scroller').scrollBy({ left: -600, behavior: 'smooth' });
-    });
-    
-    document.getElementById('scroll-next').addEventListener('click', () => {
-        document.getElementById('campaign-scroller').scrollBy({ left: 600, behavior: 'smooth' });
-    });
 }
 
 function renderScroller() {
