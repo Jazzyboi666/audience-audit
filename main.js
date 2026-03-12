@@ -74,6 +74,12 @@ const campaigns = {
         color: '#064e3b',
         interests: ['Unreal Game Engine', 'Unity Development Platform', 'Blender', 'Game Development Platforms', 'Design Software'],
         themes: ['Create 3D games for beginners', 'AI-powered game creation tool', 'Create 3D platformer using text', 'Neural game engine', 'educational game maker ai', 'Rosebud AI alternative', 'Better than Ludo.ai', 'Zero code game development', 'Apps like Hiber3D']
+    },
+    'Artists_No_Value': {
+        fullName: 'Creator_GG_ForArtistsNoValue_YS_20260306',
+        color: '#fb923c',
+        interests: ['Arts & Design Education', 'Design Software', 'Web Design & Development', 'Technology Industry', 'Artificial Intelligence in Banking', 'Game Development Platforms', 'Video Game Development Resources', 'Deep Learning', 'Machine Learning', 'AI Chatbot', 'Game Design Software and Information', 'Video Games'],
+        themes: []
     }
 };
 
@@ -186,7 +192,7 @@ function renderGlobalDiagram(sets) {
 function updateSidebar() {
     const list = document.getElementById('campaign-items');
     list.innerHTML = `
-        <div style="font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; font-weight: 600">Master Stack (11)</div>
+        <div style="font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; font-weight: 600">Master Stack (${Object.keys(campaigns).length})</div>
         ${Object.keys(campaigns).map(id => `
             <div class="stat-item" style="border-left: 4px solid ${campaigns[id].color}; padding: 10px; background: rgba(255,255,255,0.02); margin-bottom: 8px; border-radius: 4px; ${campaigns[id].isTopPerformer ? 'box-shadow: 0 0 10px rgba(74, 222, 128, 0.2)' : ''}">
                 <div style="font-size: 0.75rem; font-weight: bold; color: #fff; line-height: 1.2">${campaigns[id].fullName}</div>
@@ -293,7 +299,7 @@ function renderTopCollisionRanking() {
                             <td style="padding: 15px; font-weight: 800; color: #ec4899">#${idx + 1}</td>
                             <td style="padding: 15px"><div style="font-weight: 600">${item.name}</div><div style="font-size: 0.65rem; color: #94a3b8">${item.type}</div></td>
                             <td style="padding: 15px"><div style="display: flex; flex-wrap: wrap; gap: 4px">${item.campaigns.map(cid => `<span style="font-size: 0.6rem; color: #fff; background: ${campaigns[cid].color}; padding: 2px 6px; border-radius: 4px; font-weight: bold">${campaigns[cid].fullName}</span>`).join('')}</div></td>
-                            <td style="padding: 15px"><span style="font-size: 0.75rem; color: #94a3b8">${item.campaigns.length}/11 PILLARS</span></td>
+                            <td style="padding: 15px"><span style="font-size: 0.75rem; color: #94a3b8">${item.campaigns.length}/${Object.keys(campaigns).length} PILLARS</span></td>
                         </tr>
                     `).join('')}
                 </tbody>
