@@ -9,7 +9,8 @@ const campaigns = {
         revenue: 595.58,
         isTopPerformer: true,
         interests: ['Design Software', 'Drawing & Animation', 'Video Games', 'Game Development Platforms', 'Unity Development'],
-        themes: ['Neural rendering', 'Volumetric 3d', 'Text to FBX', 'PBR material gen', 'Unreal 5 pipeline']
+        themes: ['Neural rendering', 'Volumetric 3d', 'Text to FBX', 'PBR material gen', 'Unreal 5 pipeline'],
+        persona: 'Hard-tech artists and advanced game developers looking to automate the 3D asset pipeline.'
     },
     'Global_Trial_Push': {
         fullName: 'creator_GGAd_try6_Yasen_20251201',
@@ -17,7 +18,8 @@ const campaigns = {
         revenue: 190.00,
         isTopPerformer: true,
         interests: ['General Technology', 'Indie Game Enthusiasts', 'SEA Region Educators', 'Game Design Software', 'Instructions for Making a Game'],
-        themes: ['LLM', 'best ai', 'ai game', 'start free trial', 'buy subscription', '3d game maker singapore', 'Create 3D games online', 'no-code 3d game builder', 'unity replacement']
+        themes: ['LLM', 'best ai', 'ai game', 'start free trial', 'buy subscription', '3d game maker singapore', 'Create 3D games online', 'no-code 3d game builder', 'unity replacement'],
+        persona: 'General tech enthusiasts and educators looking for free-to-start, no-code game building solutions.'
     },
     'Competitive_Siege_T2': {
         fullName: 'creator_GGAD_T2_LY_20251222',
@@ -25,61 +27,71 @@ const campaigns = {
         revenue: 126.77,
         isTopPerformer: true,
         interests: ['Unity Development Platform', 'Unreal Game Engine', 'Competitive Switchers', 'Game Development Platforms', 'Design Software'],
-        themes: ['Rosebud AI competitor', 'Scenario.gg alternative', 'Fast game prototyping', 'AI world creator pro', '3D Modeling for Unit', 'AI 3D Asset Generator']
+        themes: ['Rosebud AI competitor', 'Scenario.gg alternative', 'Fast game prototyping', 'AI world creator pro', '3D Modeling for Unit', 'AI 3D Asset Generator'],
+        persona: 'Competitive game developers looking for faster, AI-driven alternatives to legacy engines like Unity.'
     },
     'Interface_Efficiency': {
         fullName: 'Creator_NewIp_PayingUsers_GG_SeeleInterface_YS',
         color: '#10b981',
         interests: ['Technology (Affinity)', 'Game Development Platforms (In-market)', 'Deep Learning', 'Game Design Software'],
-        themes: ['Seele AI', 'SaaS game dev', 'Prompt to world', 'No-code prototyping', 'Fast game creation']
+        themes: ['Seele AI', 'SaaS game dev', 'Prompt to world', 'No-code prototyping', 'Fast game creation'],
+        persona: 'SaaS-oriented creators and efficiency seekers focusing on UI/interface speed and no-code tools.'
     },
     'Flashy_Images': {
         fullName: 'Creator_NewIp_PayingUsers_GG_FlashyImages_YS_20260226',
         color: '#f59e0b',
         interests: ['Video Games', 'Gamers (Affinity)', 'Adventure & Strategy Fans', 'PC Gamers'],
-        themes: ['make your own game', 'instant game creator', 'game dev made easy', 'custom 3d world', 'turn idea into game']
+        themes: ['make your own game', 'instant game creator', 'game dev made easy', 'custom 3d world', 'turn idea into game'],
+        persona: 'Gamer-developers and hobbyists who want to turn their creative ideas into instant 3D experiences.'
     },
     'Automation_Layer': {
         fullName: 'Creator_GG_ForGameDevsTryNew2_YS_20260303',
         color: '#ef4444',
         interests: ['Design Software', 'Web Design', 'Deep Learning', 'Machine Learning', 'Indie Games'],
-        themes: ['godot automation', 'unity level design', 'unreal project from prompt', 'unity world builder', 'npc system builder']
+        themes: ['godot automation', 'unity level design', 'unreal project from prompt', 'unity world builder', 'npc system builder'],
+        persona: 'Indie devs and automation fans targeting world-building and NPC system generation.'
     },
     'Purchase_Conversion': {
         fullName: 'Creator_GGAD_Purchase_Meshy&Trippo_YS_20260224',
         color: '#a855f7',
         interests: ['Meshy and Trippo Customers', 'Purchasers of SeeleWEB', 'All Stripe Payers', 'Design Software'],
-        themes: ['ai 3d model generator', 'ai tools for game developers', 'low poly asset generator', 'reduce 3d modeling cost', '3d workflow automation']
+        themes: ['ai 3d model generator', 'ai tools for game developers', 'low poly asset generator', 'reduce 3d modeling cost', '3d workflow automation'],
+        persona: 'High-intent buyers and existing users of 3D modeling tools looking to scale production and reduce costs.'
     },
     'Brand_Push_V2': {
         fullName: 'Creator_GGAds_NewIPTry2_YS_20260302',
         color: '#ec4899',
         interests: ['Technology (Affinity)', 'Game Development Platforms', 'Video Game Development Resources', 'Game Design Software'],
-        themes: ['ai game maker', 'seele ai game generator', 'no code game development', 'make a game from text', 'ai game designer']
+        themes: ['ai game maker', 'seele ai game generator', 'no code game development', 'make a game from text', 'ai game designer'],
+        persona: 'Visionary creators and brand-conscious developers interested in text-to-game innovation.'
     },
     'Competitive_Alternative': {
         fullName: 'Creator_GGAds_GooglePics_YS_20260302',
         color: '#06b6d4',
         interests: ['Arts & Design Education', 'Design Software', 'Web Design & Development', 'Instructions for Making a Game'],
-        themes: ['create games without coding', 'ai game engine', 'no code game builder', 'ai game creator', 'ai unity alternative', 'build a game in minutes']
+        themes: ['create games without coding', 'ai game engine', 'no code game builder', 'ai game creator', 'ai unity alternative', 'build a game in minutes'],
+        persona: 'Creative students and beginner designers seeking simple, non-technical ways to build 3D worlds.'
     },
     'Pro_Enterprise_Pipeline': {
         fullName: '0224-creator-T1-MAX44-YL',
         color: '#475569',
         interests: ['Design Software (In-market)', 'Drawing & Animation Software (In-market)', 'Game Development Platforms', 'Instructions for Making a Game'],
-        themes: ['volumetric 3d generation ai', 'unity pro 3d assets ai', 'unreal engine 5 ai pipeline', 'godot engine source to 3d', 'text to fbx pro generator', 'obj export ai 3d models', 'pbr material generator for games', '4k texture generation ai', 'high quality mesh generator ai']
+        themes: ['volumetric 3d generation ai', 'unity pro 3d assets ai', 'unreal engine 5 ai pipeline', 'godot engine source to 3d', 'text to fbx pro generator', 'obj export ai 3d models', 'pbr material generator for games', '4k texture generation ai', 'high quality mesh generator ai'],
+        persona: 'Pro studio leads and enterprise developers building high-fidelity 4K and volumetric 3D assets.'
     },
     'Competitive_Siege_V1': {
         fullName: '1223-sale-GGAD_T1-2_LY',
         color: '#064e3b',
         interests: ['Unreal Game Engine', 'Unity Development Platform', 'Blender', 'Game Development Platforms', 'Design Software'],
-        themes: ['Create 3D games for beginners', 'AI-powered game creation tool', 'Create 3D platformer using text', 'Neural game engine', 'educational game maker ai', 'Rosebud AI alternative', 'Better than Ludo.ai', 'Zero code game development', 'Apps like Hiber3D']
+        themes: ['Create 3D games for beginners', 'AI-powered game creation tool', 'Create 3D platformer using text', 'Neural game engine', 'educational game maker ai', 'Rosebud AI alternative', 'Better than Ludo.ai', 'Zero code game development', 'Apps like Hiber3D'],
+        persona: 'Beginners and early-stage indie devs comparing AI-powered platforms for direct 3D platformer creation.'
     },
     'Artists_No_Value': {
         fullName: 'Creator_GG_ForArtistsNoValue_YS_20260306',
         color: '#fb923c',
         interests: ['Arts & Design Education', 'Design Software', 'Web Design & Development', 'Technology Industry', 'Artificial Intelligence in Banking', 'Game Development Platforms', 'Video Game Development Resources', 'Deep Learning', 'Machine Learning', 'AI Chatbot', 'Game Design Software and Information', 'Video Games'],
-        themes: []
+        themes: [],
+        persona: 'A broad mix of creative tech enthusiasts, design students, and general AI/chatbot users.'
     }
 };
 
@@ -114,6 +126,10 @@ function renderScroller() {
                 <div style="display: flex; flex-direction: column; gap: 0.5rem">
                     ${camp.interests.map(i => `<div class="interest-tag">${i}</div>`).join('')}
                 </div>
+            </div>
+            <div class="persona-column">
+                <div style="font-size: 0.65rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 0.5rem">Target Audience</div>
+                <p style="font-size: 0.85rem; line-height: 1.6; color: var(--text-main); font-weight: 300">${camp.persona}</p>
             </div>
         `;
         container.appendChild(card);

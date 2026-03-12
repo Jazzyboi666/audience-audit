@@ -28,7 +28,7 @@ body {
 }
 
 .app-container {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 2rem;
     display: flex;
@@ -84,18 +84,16 @@ header {
 }
 
 #canvas-wrapper {
-    min-height: 400px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     position: relative;
-    overflow: hidden;
     padding: 0;
 }
 
 #campaign-scroller {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
     padding: 2rem;
     width: 100%;
@@ -108,8 +106,8 @@ header {
     padding: 0;
     transition: all 0.3s ease;
     display: grid;
-    grid-template-columns: 200px 1fr;
-    height: 350px;
+    grid-template-columns: 220px 1fr 1fr;
+    min-height: 250px;
 }
 
 .scroller-card:hover {
@@ -143,6 +141,14 @@ header {
 
 .interest-column::-webkit-scrollbar {
     display: none;
+}
+
+.persona-column {
+    padding: 1.5rem;
+    border-left: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .interest-tag {
